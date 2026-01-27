@@ -1,0 +1,12 @@
+# Dependencies use compatible version ranges to allow safe upgrades
+# while avoiding breaking changes from future major versions.
+
+fastapi>=0.109,<1.0
+uvicorn>=0.25,<1.0
+pydantic>=2.5,<3.0
+python-multipart>=0.0.6,<1.0
+
+pytest>=7.4,<8.0
+pytest-asyncio>=0.23,<1.0
+pytest-cov>=4.1,<5.0
+httpx>=0.26,<1.0
