@@ -1,9 +1,22 @@
 from pydantic import BaseModel
-from typing import Optional
-from uuid import UUID
+from typing import Optional, List
+
 
 class UploadResponse(BaseModel):
-    document_id: UUID
+    document_id: str
     filename: str
-    content_type: str | None
-    status: str # "uploaded"
+    content_type: Optional[str]
+    status: str
+
+
+class StatusHistoryItem(BaseModel):
+    status: str
+    changed_at: str
+
+
+class DocumentResponse(BaseModel):
+    document_id: str
+    filename: str
+    content_type: Optional[str]
+    created_at: str
+    status_history: List[StatusHistoryItem]
